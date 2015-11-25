@@ -36,6 +36,7 @@
 -(void) sendMessage{
     [self.delegate sendMessage:self.textView.text];
     self.textView.text = @"";
+    
 }
 
 #pragma mark - private

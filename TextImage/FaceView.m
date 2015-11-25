@@ -23,7 +23,7 @@ static const NSInteger kMaxPerLine = 6;
 @implementation FacePreviewView
 
 - (instancetype)initWithFrame:(CGRect)frame{
-    if ([super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame]) {
         [self setup];
     }
     return self;
@@ -87,7 +87,7 @@ static const NSInteger kMaxPerLine = 6;
 
 #pragma mark - private
 - (instancetype) initWithFrame:(CGRect)frame{
-    if ([super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame]) {
         [self setup];
     }
     return self;

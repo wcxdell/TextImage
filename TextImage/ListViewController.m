@@ -25,15 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataArray = [[NSMutableArray alloc] initWithObjects:@"啊就是肯德基123123撒了空间的卡拉斯京抵抗力就仨快递",@"1",@"asjkdl",@"[--1]",@"ajklhs[--2][--23][--12][--10][--10][--2][--23][--12][--12]",@"123",@"123",nil];
-    self.view.backgroundColor = [UIColor colorWithRed:234.0f/255.0f green:234/255.0f blue:234/255.f alpha:1.0f];
-    
-    [self.view addSubview:self.tableView];
-    [self.view addSubview:self.chatBar];
-    
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endInputing)];
-    tapGestureRecognizer.cancelsTouchesInView = NO;
-    [self.tableView addGestureRecognizer:tapGestureRecognizer];
+    [self setup];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -89,6 +81,18 @@
 
 #pragma mark - Public Methods
 
+
+-(void) setup{
+    self.view.backgroundColor = [UIColor colorWithRed:234.0f/255.0f green:234/255.0f blue:234/255.f alpha:1.0f];
+    
+    [self.view addSubview:self.tableView];
+    [self.view addSubview:self.chatBar];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endInputing)];
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    [self.tableView addGestureRecognizer:tapGestureRecognizer];
+}
+
 -(void)endInputing{
     [self.chatBar endInputing];
 }
@@ -123,6 +127,13 @@
         _chatBar.delegate = self;
     }
     return _chatBar;
+}
+
+-(NSArray *) dataArray{
+    if (!_dataArray) {
+        _dataArray = [[NSMutableArray alloc] initWithObjects:@"啊就是肯德基123123撒了空间的卡拉斯京抵抗力就仨快递",@"1",@"asjkdl",@"[--1]",@"ajklhs[--2][--23][--12][--10][--10][--2][--23][--12][--12]",@"123",@"123",nil];
+    }
+    return _dataArray;
 }
 
 @end
