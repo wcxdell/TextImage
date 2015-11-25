@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ a new try
+*/
+
 #define chatBarHeight 40
 
 @protocol ChatBarDelegate;
