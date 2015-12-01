@@ -24,6 +24,7 @@
 
 #pragma mark - FaceViewDelegate
 
+
 -(void)addFaceView:(NSString*)faceId{
     if ([faceId isEqualToString:@"[--100]"]) {
         [self textView:self.textView shouldChangeTextInRange:NSMakeRange(self.textView.text.length - 1, 1) replacementText:@""];
@@ -189,7 +190,6 @@
 }
 
 #pragma mark - Getter
-
 - (CGFloat)screenHeight{
     
     return [[UIApplication sharedApplication] keyWindow].bounds.size.height;
